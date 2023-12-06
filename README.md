@@ -1,1 +1,2 @@
-# Minor1
+# hostelhunt
+Minor Project
