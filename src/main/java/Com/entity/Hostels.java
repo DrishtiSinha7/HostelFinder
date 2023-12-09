@@ -7,6 +7,7 @@ public class Hostels {
 	private String category;
 	private String status;
 	private String location;
+	private String imageurl;
 	private String pdate;
 
 	public Hostels() {
@@ -14,13 +15,14 @@ public class Hostels {
 		
 	}
 
-	public Hostels(String name, String description, String category, String status, String location, String pdate) {
+	public Hostels(String name, String description, String category, String status, String location,String imageurl, String pdate) {
 		super();
 		this.name = name;
 		this.description = description;
 		this.category = category;
 		this.status = status;
 		this.location = location;
+		this.imageurl = imageurl;
 		this.pdate = pdate;
 	}
 
@@ -71,6 +73,15 @@ public class Hostels {
 	public void setLocation(String location) {
 		this.location = location;
 	}
+	
+	public String getImageurl() {
+        return imageurl;
+    }
+
+    public void setImageurl(String imageurl) {
+        this.imageurl = imageurl;
+    }
+
 
 	public String getPdate() {
 		return pdate;
@@ -79,5 +90,7 @@ public class Hostels {
 	public void setPdate(String pdate) {
 		this.pdate = pdate;
 	}
+	
+	
 
 }

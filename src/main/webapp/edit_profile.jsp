@@ -6,7 +6,7 @@
     <title>Edit Profile Page</title>
     <%@include file="all_component/all_css.jsp"%>
 </head>
-<body style="background-color: #f7f7f7;">
+<body style="background-color: #B5CB99;;">
 
     <c:if test="${empty userobj }">
         <c:redirect url="login.jsp" />

@@ -18,9 +18,9 @@
 <%@include file="all_component/all_css.jsp"%>
 </head>
 <body style="background-color: #B5CB99;">
-<%-- <c:if test="${empty userobj }">
+	<c:if test="${empty userobj }">
 		<c:redirect url="login.jsp" />
-	</c:if> --%>	
+	</c:if> 
 	<%@include file="all_component/navbar.jsp"%>
 	<div class="container">
 		<div class="row">
@@ -78,6 +78,7 @@
 						<h6>
 							Publish Date:
 							<%=h.getPdate().toString()%></h6>
+
 						<div class="text-center">
 							<a href="one_view.jsp?id=<%=h.getId()%>"
 								class="btn btn-sm bg-success text-white">View Details</a>
@@ -86,12 +87,12 @@
 				</div>
 				<%
                }
- } else {
+ }else {
 	 %>
 				<h4 class="text-center text-danger"><%=msg%></h4>
-	 <%
+				<%
  }
-%>
+%> 
 			</div>
 		</div>
 	</div>

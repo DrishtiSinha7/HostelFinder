@@ -29,23 +29,33 @@
                  %>
                  <div class="card">
                     <div class="card-body">
-                       <div class="text-center text-primary">
-                          <i class="far fa-clipboard fa-2X"></i>
+                       <div class="row">
+                          <div class="col-md-6">
+                             <div class="text-center text-primary">
+                                <i class="far fa-clipboard fa-3X"></i> <!-- Increased font size -->
+                             </div>
+                             
+                             <h6><%=h.getName() %></h6>
+                             <p><%=h.getDescription() %>.</p>
+                             <div class="form-row">
+                                  <div class="form-group col-md-12">
+                                      <input type="text" class="form-control form-control-sm"
+                                          value="Location: <%=h.getLocation()%>" readonly>
+                                  </div>
+                                  <div class="form-group col-md-12">
+                                      <input type="text" class="form-control form-control-sm"
+                                          value="Category: <%=h.getCategory()%>" readonly>
+                                  </div>
+                             </div>
+                             <h6>Publish Date: <%=h.getPdate().toString()%></h6>
+                          </div>
+                          <div class="col-md-6">
+                             <div>
+                                <img src="images/<%=h.getImageurl()%>" alt="Hostel Image"
+                                    style="max-width: 100%;">
+                             </div>
+                          </div>
                        </div>
-                       
-                       <h6><%=h.getName() %></h6>
-                       <p><%=h.getDescription() %>.</p>
-                       <div class="form-row">
-                            <div class="form-group col-md-12">
-                                <input type="text" class="form-control form-control-sm"
-                                    value="Location: <%=h.getLocation()%>" readonly>
-                            </div>
-                            <div class="form-group col-md-12">
-                                <input type="text" class="form-control form-control-sm"
-                                    value="Category: <%=h.getCategory()%>" readonly>
-                            </div>
-                       </div>
-                       <h6>Publish Date: <%=h.getPdate().toString()%></h6>
                     </div>
                  </div>
            </div>  

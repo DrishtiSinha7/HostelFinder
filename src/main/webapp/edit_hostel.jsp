@@ -35,13 +35,19 @@
 
 						<h5>Edit Hostels</h5>
 					</div>
-					<form action="update" method="post">
+					<form action="update" method="post" enctype="multipart/form-data">
 
 						<input type="hidden" value="<%=h.getId()%>" name="id">
 						<div class="form-group">
 							<label>Hostel Name</label> <input type="text" name="title"
 								required class="form-control" value="<%=h.getName()%>">
 						</div>
+						
+						<div class="form-group">
+							<label>Upload Image</label> <input type="file" accept="image/*" name="image"
+								 required class="form-control-file">
+						</div>
+						
 						<div class="form-row">
 							<div class="form-group col-md-4">
 								<label>Location</label> <select name="location"
@@ -66,14 +72,15 @@
 								</select>
 							</div>
 							<div class="form-group col-md-4">
-								<label>Rooms avaliable</label> <select class="form-control"
+								<label>Rooms available</label> <select class="form-control"
 									name="Rooms avaliable">
 									<option class="active" value="<%=h.getStatus()%>"><%=h.getStatus()%></option>
-									<option class="active" value="avaliable">Active</option>
+									<option class="active" value="avalible">Active</option>
 									<option class="Inactive" value="Inavaliable">Inactive</option>
 								</select>
 							</div>
 						</div>
+						
 
 						<div class="form-group">
 							<label>Enter Description</label>

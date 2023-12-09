@@ -29,11 +29,16 @@
 
 						<h5>Add Hostels</h5>
 					</div>
-					<form action="add_hostel" method="post">
+					<form action="add_hostel" method="post" enctype="multipart/form-data">
 						<div class="form-group">
 							<label>Hostel Name</label> <input type="text" name="title"
 								required class="form-control">
 						</div>
+						<div class="form-group">
+							<label>Upload Image</label> <input type="file" accept="image/*" name="image"
+								 required class="form-control-file">
+						</div>
+
 						<div class="form-row">
 							<div class="form-group col-md-4">
 								<label>Location</label> <select name="location"
@@ -58,10 +63,10 @@
 								</select>
 							</div>
 							<div class="form-group col-md-4">
-								<label>Rooms avaliable</label> <select class="form-control"
-									name="Rooms avaliable">
-									<option class="active" value="avaliable">Active</option>
-									<option class="Inactive" value="Inavaliable">Inactive</option>
+								<label>Rooms available</label> <select class="form-control"
+									name="Rooms available">
+									<option class="active" value="available">Active</option>
+									<option class="Inactive" value="Inavailable">Inactive</option>
 								</select>
 							</div>
 						</div>

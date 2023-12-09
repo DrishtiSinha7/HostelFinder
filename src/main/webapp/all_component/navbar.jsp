@@ -1,5 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page isELIgnored="false"%>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
 	<a class="navbar-brand" href="#">Navbar</a>
@@ -74,34 +79,31 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<div class="card">
-					<div class="card-body">
-						<div class="text-center text-primary">
-							<i class="fas fa-user-circle fa-3x"></i>
-						</div>
-						<table class="table">
+    <div class="card">
+        <div class="card-body">
+            <div class="text-center text-primary">
+                <i class="fas fa-user-circle fa-3x"></i>
+            </div>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">Name</th>
+                        <th>${userobj.name}</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Qualification</th>
+                        <th>${userobj.qualification}</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Email</th>
+                        <th>${userobj.email}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
-							<tbody>
-								<tr>
-									<th scope="row">Name</th>
-									<th>${userobj.name }</th>
-								</tr>
-								
-								<tr>
-									<th scope="row">Qualification</th>
-									<th>${userobj.qualification }</th>
-								</tr>
-								
-								<tr>
-									<th scope="row">Email</th>
-									<th>${userobj.email }</th>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-				
-			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				<a href="edit_profile.jsp" class="btn btn-primary">Edit</a>

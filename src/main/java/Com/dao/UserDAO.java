@@ -51,9 +51,9 @@ public class UserDAO {
 				u = new User();
 				u.setId(rs.getInt(1));
 				u.setName(rs.getString(2));
-				u.setQualification(rs.getString(3));
-				u.setEmail(rs.getString(4));
-				u.setPassword(rs.getString(5));
+				u.setEmail(rs.getString(3));
+				u.setPassword(rs.getString(4));
+				u.setQualification(rs.getString(5));
 				u.setRole(rs.getString(6));
 			}
 
@@ -62,6 +62,31 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 		return u;
+	}
+	
+	public boolean updateUser(User u) {
+		boolean f = false;
+		try {
+			
+			String sql = "UPDATE user SET name=?, email=?, password=?, qualification=?, role=? ";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, u.getName());
+			ps.setString(2, u.getEmail());
+			ps.setString(3, u.getPassword());
+			ps.setString(4, u.getQualification());
+			ps.setInt(5, u.getId());
+			
+			int i = ps.executeUpdate();
+			if (i == 1) {
+
+				f = true;
+			}
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		return f;
 	}
 
 }

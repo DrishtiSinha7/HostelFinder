@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>User : View Jobs</title>
+<title>User : View Hostel</title>
 <%@include file="all_component/all_css.jsp"%>
 </head>
 <body style="background-color: #B5CB99;">
@@ -23,7 +23,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h5 class="text-center text-primary"></h5>
+				<h5 class="text-center text-primary" style="color: black;">All Active Hostels</h5>
 
 				<div class="card">
 					<div class="card-body">

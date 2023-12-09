@@ -26,13 +26,14 @@ public class hostelDAO {
 		boolean f = false;
 		try {
 
-			String sql = "insert into hostel(name,description,category,status,location) values(?,?,?,?,?) ";
+			String sql = "insert into hostel(name,description,category,status,location,imageurl) values(?,?,?,?,?,?) ";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, h.getName());
 			ps.setString(2, h.getDescription());
 			ps.setString(3, h.getCategory());
 			ps.setString(4, h.getStatus());
 			ps.setString(5, h.getLocation());
+			ps.setString(6, h.getImageurl());
 
 			int i = ps.executeUpdate();
 
@@ -65,7 +66,8 @@ public class hostelDAO {
 				h.setCategory(rs.getString(4));
 				h.setStatus(rs.getString(5));
 				h.setLocation(rs.getString(6));
-				h.setPdate(rs.getTimestamp(7) + ""); // to convert into string
+				h.setImageurl(rs.getString(7));
+				h.setPdate(rs.getTimestamp(8) + ""); // to convert into string
 				list.add(h);
 			}
 
@@ -85,7 +87,7 @@ public class hostelDAO {
 
 			String sql = "select * from hostel where status=? order by id desc";
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, "avaliable");
+			ps.setString(1, "avalible");
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 
@@ -96,7 +98,8 @@ public class hostelDAO {
 				h.setCategory(rs.getString(4));
 				h.setStatus(rs.getString(5));
 				h.setLocation(rs.getString(6));
-				h.setPdate(rs.getTimestamp(7) + ""); // to convert into string
+				h.setImageurl(rs.getString(7));
+				h.setPdate(rs.getTimestamp(8) + ""); // to convert into string
 				list.add(h);
 			}
 
@@ -126,7 +129,8 @@ public class hostelDAO {
 				h.setCategory(rs.getString(4));
 				h.setStatus(rs.getString(5));
 				h.setLocation(rs.getString(6));
-				h.setPdate(rs.getTimestamp(7) + ""); // to convert into string
+				h.setImageurl(rs.getString(7));
+				h.setPdate(rs.getTimestamp(8) + ""); // to convert into string
 
 			}
 
@@ -141,14 +145,15 @@ public class hostelDAO {
 		boolean f = false;
 		try {
 
-			String sql = "update hostel SET name=?,description=?,category=?,status=?,location=? where id=? ";
+			String sql = "update hostel SET name=?,description=?,category=?,status=?,location=?,imageurl=? where id=? ";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, h.getName());
 			ps.setString(2, h.getDescription());
 			ps.setString(3, h.getCategory());
 			ps.setString(4, h.getStatus());
 			ps.setString(5, h.getLocation());
-			ps.setInt(6, h.getId());
+			ps.setString(6, h.getImageurl());
+			ps.setInt(7, h.getId());
 
 			int i = ps.executeUpdate();
 
@@ -200,7 +205,8 @@ public class hostelDAO {
 				h.setCategory(rs.getString(4));
 				h.setStatus(rs.getString(5));
 				h.setLocation(rs.getString(6));
-				h.setPdate(rs.getString(7));
+				h.setImageurl(rs.getString(7));
+				h.setPdate(rs.getString(8));;
 				list.add(h);
 			}
 		} catch (Exception e) {
@@ -228,7 +234,8 @@ public List<Hostels> getJobsAndLocationAndCate(String category, String location)
 				h.setCategory(rs.getString(4));
 				h.setStatus(rs.getString(5));
 				h.setLocation(rs.getString(6));
-				h.setPdate(rs.getString(7));
+				h.setImageurl(rs.getString(7));
+				h.setPdate(rs.getString(8));;
 				list.add(h);
 			}
 		} catch (Exception e) {

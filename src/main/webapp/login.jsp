@@ -47,6 +47,10 @@
 									required="required" type="password" class="form-control"
 									id="exampleInputPassword1" name="password">
 							</div>
+							
+							<div class="from-group">
+                              <a href="forgotPassword.jsp">Forgot Password ?</a>
+                            </div>
 
 							<button type="submit"
 								class="btn btn-primary badge-pill btn-block">Login</button>
