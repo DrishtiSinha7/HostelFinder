@@ -1,83 +1,101 @@
 package Com.entity;
 
 public class Hostels {
-	private int id;
-	private String name;
-	private String description;
-	private String category;
-	private String status;
-	private String location;
-	private String pdate;
+    private int id;
+    private String name;
+    private String description;
+    private String category;
+    private String status;
+    private String location;
+    private String imageurl;
+    private String pdate;
+    private int hid; // Added for the foreign key
 
-	public Hostels() {
-		super();
-		
-	}
+    public Hostels() {
+        super();
+    }
 
-	public Hostels(String name, String description, String category, String status, String location, String pdate) {
-		super();
-		this.name = name;
-		this.description = description;
-		this.category = category;
-		this.status = status;
-		this.location = location;
-		this.pdate = pdate;
-	}
+    public Hostels(String name, String description, String category, String status, String location, String imageurl, String pdate, int hid) {
+        super();
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.status = status;
+        this.location = location;
+        this.imageurl = imageurl;
+        this.pdate = pdate;
+        this.hid = hid;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public String getCategory() {
-		return category;
-	}
+    public String getCategory() {
+        return category;
+    }
 
-	public void setCategory(String category) {
-		this.category = category;
-	}
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
-	public String getStatus() {
-		return status;
-	}
+    public String getStatus() {
+        return status;
+    }
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-	public String getLocation() {
-		return location;
-	}
+    public String getLocation() {
+        return location;
+    }
 
-	public void setLocation(String location) {
-		this.location = location;
-	}
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
-	public String getPdate() {
-		return pdate;
-	}
+    public String getImageurl() {
+        return imageurl;
+    }
 
-	public void setPdate(String pdate) {
-		this.pdate = pdate;
-	}
+    public void setImageurl(String imageurl) {
+        this.imageurl = imageurl;
+    }
 
+    public String getPdate() {
+        return pdate;
+    }
+
+    public void setPdate(String pdate) {
+        this.pdate = pdate;
+    }
+
+    public int getHid() {
+        return hid;
+    }
+
+    public void setHid(int hid) {
+        this.hid = hid;
+    }
 }

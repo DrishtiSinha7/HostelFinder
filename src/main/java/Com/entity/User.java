@@ -4,16 +4,20 @@ public class User {
   
 	private int id;
 	private String name;
-	private String Email;
-	private String Password;
+	private String email;
+	private String password;
 	private String qualification;
 	private String role;
+	
+	
+	
+	
 	
 	public User(String name, String email, String password, String qualification, String role) {
 		super();
 		this.name = name;
-		Email = email;
-		Password = password;
+		this.email = email;
+		this.password = password;
 		this.qualification = qualification;
 		this.role = role;
 	}
@@ -34,16 +38,16 @@ public class User {
 		this.name = name;
 	}
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 	public String getPassword() {
-		return Password;
+		return password;
 	}
 	public void setPassword(String password) {
-		Password = password;
+		this.password = password;
 	}
 	public String getQualification() {
 		return qualification;
@@ -57,4 +61,10 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
-}
+	
+	
+	
+	}
+	
+
+	

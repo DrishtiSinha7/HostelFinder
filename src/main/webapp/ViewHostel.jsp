@@ -36,35 +36,42 @@
 				<%
 				hostelDAO dao = new hostelDAO(DBConnect.getConn());
 				List<Hostels> list = dao.getAllHostels();
+
 				for (Hostels h : list) {
 				%>
 				<div class="card mt-2">
 					<div class="card-body">
-						<div class="text-center text-primary">
-							<i class="far fa-clipboard fa-2x"></i>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="text-center text-primary">
+									<i class="far fa-clipboard fa-2x"></i>
+								</div>
+
+								<h6><%=h.getName()%></h6>
+								<p><%=h.getDescription()%></p>
+								<p>
+									Location:
+									<%=h.getLocation()%></p>
+								<p>
+									Category:
+									<%=h.getCategory()%></p>
+								<p>
+									Rooms Available:
+									<%=h.getStatus()%></p>
+								<h6>
+									Publish Date:
+									<%=h.getPdate()%></h6>
+							</div>
+
+							<div class="col-md-6">
+								<div>
+									<img src="images/<%=h.getImageurl()%>" alt="Hostel Image"
+										style="max-width: 100%;">
+								</div>
+							</div>
 						</div>
 
-						<h6><%=h.getName()%></h6>
-						<p><%=h.getDescription()%></p>
-						<br>
-						<div class="form-row">
-							<div class="form-group col-md-3">
-								<input type="text" class="form-control form-control-sm"
-									value="location:<%=h.getLocation()%>" readonly>
-							</div>
-							<div class="form-group col-md-3">
-								<input type="text" class="form-control form-control-sm"
-									value="Category:<%=h.getCategory()%>" readonly>
-							</div>
-							<div class="form-group col=md-3">
-								<input type="text" class="form-control form-control-sm"
-									value="Rooms Avaliable<%=h.getStatus()%>" readonly>
-							</div>
-						</div>
-						<h6>
-							Publish Date:
-							<%=h.getPdate()%></h6>
-						<div class="text-center">
+						<div class="text-center mt-3">
 							<a href="edit_hostel.jsp?id=<%=h.getId()%>"
 								class="btn btn-sm bg-success text-white">Edit</a> <a
 								href="delete?id=<%=h.getId()%>"
@@ -72,10 +79,9 @@
 						</div>
 					</div>
 				</div>
-
 				<%
-				}
-				%>
+  }
+%>
 
 
 

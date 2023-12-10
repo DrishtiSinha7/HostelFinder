@@ -9,6 +9,21 @@
 <meta charset="UTF-8">
 <title>SignUp Page</title>
 <%@include file="all_component/all_css.jsp"%>
+<script>
+    function updateQualificationVisibility() {
+        var role = document.getElementById("exampleInputRole").value;
+        var qualificationField = document.getElementById("qualificationField");
+
+        if (role === "HostelAdministration") {
+            qualificationField.style.display = "none";
+        } else {
+            qualificationField.style.display = "block";
+        }
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        updateQualificationVisibility();
+    });
+</script>
 </head>
 <style>
 .btn.btn-primary {
@@ -26,7 +41,6 @@
 					<div class="card-body">
 						<div class="text-center">
 							<i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>
-
 							<h5>Registration</h5>
 						</div>
 						
@@ -36,41 +50,40 @@
 
 						<form action="add_user" method="post">
 							<div class="from-group">
-								<label>Enter Full Name</label> <input type="text"
-									required="required" class="form-control"
-									id="exampleInputEmail1" aria-describedby="emailHelp"
-									name="name">
+								<label>Enter Full Name</label>
+								<input type="text" required="required" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
 							</div>
 
 							<div class="from-group">
-								<label>Enter Qualification</label> <input type="text"
-									required="required" class="form-control"
-									id="exampleInputEmail1" aria-describedby="emailHelp" name="qua">
+								<label>Enter Qualification</label>
+								<input type="text" required="required" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="qua" id="qualificationField">
 							</div>
 
 							<div class="from-group">
-								<label>Enter Email</label> <input type="email"
-									required="required" class="form-control"
-									id="exampleInputEmail1" aria-describedby="emailHelp"
-									name="email">
+								<label>Enter Email</label>
+								<input type="email" required="required" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
 							</div>
 
 							<div class="from-group">
-								<label for="exampleInputPassword1">Enter Password</label> <input
-									required="required" type="password" class="form-control"
-									id="exampleInputPassword1" name="ps">
+								<label for="exampleInputPassword1">Enter Password</label>
+								<input required="required" type="password" class="form-control" id="exampleInputPassword1" name="ps">
 							</div>
 
-							<button type="submit"
-								class="btn btn-primary badge-pill btn-block">Register</button>
+							<div class="from-group">
+								<label for="exampleInputRole">Select Role</label>
+								<select class="form-control" id="exampleInputRole" name="role" onchange="updateQualificationVisibility()">
+									<option value="user">User</option>
+									<option value="HostelAdministration">Hostel Administration</option>
+									<!-- Add more roles if needed -->
+								</select>
+							</div>
 
+							<button type="submit" class="btn btn-primary badge-pill btn-block">Register</button>
 						</form>
-
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>
